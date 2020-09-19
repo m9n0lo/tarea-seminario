@@ -55,7 +55,7 @@ pipeline {
                 step([$class: 'KubernetesEngineBuilder', 
                         projectId: "nice-root-288300",
                         clusterName: "cluster-manuel",
-                        zone: "us-central1-c",
+                        zone: "us-central1-a",
                         manifestPattern: "${DEPLOY_FOLDER}/",
                         credentialsId: "seminario",
                         verifyDeployments: true])
