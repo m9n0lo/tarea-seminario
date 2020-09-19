@@ -33,7 +33,7 @@ spec:
     spec:
       containers:
       - name: ingress-router
-        image: m9n0lo/nginx:1.0
+        image: m9n0lo/nginx:1.
         ports:
         - name: http
           containerPort: 80

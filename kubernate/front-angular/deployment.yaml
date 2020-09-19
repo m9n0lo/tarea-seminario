@@ -1,0 +1,18 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+    name: angular-deploy
+spec:
+    selector:
+        matchLabels:
+            app: angular-deploy
+    template:
+        metadata:
+            labels:
+                app: angular-deploy
+        spec:
+            containers:
+                - name: angular-deploy
+                  image: DOCKER_IMAGE:TAG
+                  ports:
+                  - containerPort: 3000
