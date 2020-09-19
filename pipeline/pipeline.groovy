@@ -5,7 +5,7 @@ pipeline {
         APP_REPO_URL = "${env.BASE_GIT_URL}/${nombre_repo}.git"
         INFRA_REPO_URL = "${env.BASE_GIT_URL}/tarea-seminario.git"
         DOCKER_IMAGE = "m9n0lo/${nombre_repo}"
-        DEPLOY_FOLDER = "deploy/kubernete/${nombre_repo}"
+        DEPLOY_FOLDER = "deploy/kubernate/${nombre_repo}"
     }
 
     agent any
@@ -49,8 +49,8 @@ pipeline {
         
         stage('Deploy') {
             steps{
-                sh "sed -i 's:DOCKER_IMAGE:${env.DOCKER_IMAGE}:g' ${DEPLOY_FOLDER}/deploy.yaml"
-                sh "sed -i 's:TAG:${tag}:g' ${DEPLOY_FOLDER}/deploy.yaml"
+                sh "sed -i 's:DOCKER_IMAGE:${env.DOCKER_IMAGE}:g' ${DEPLOY_FOLDER}/deployment-back.yaml"
+                sh "sed -i 's:TAG:${tag}:g' ${DEPLOY_FOLDER}/deployment-back.yaml"
                 
                 step([$class: 'KubernetesEngineBuilder', 
                         projectId: "nice-root-288300",
