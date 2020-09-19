@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+    name: nodejs-deploy
+    labels:
+        app: nodejs-deploy
+spec:
+    selector:
+        app: nodejs-deploy
+    ports:
+        - protocol: TCP
+          port: 8000
