@@ -33,7 +33,8 @@ spec:
     spec:
       containers:
       - name: ingress-router
-        image: m9n0lo/ingress:1.0
+      image: DOCKER_IMAGE:TAG
+      imagePullPolicy: Always
         ports:
         - name: http
           containerPort: 80
